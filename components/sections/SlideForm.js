@@ -11,7 +11,8 @@ export default function SlideForm() {
         <>
             <div className="tf-slide-form" style={{
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                backgroundImage: 'none'  // 移除默认背景图片
             }}>
                 <video
                     autoPlay

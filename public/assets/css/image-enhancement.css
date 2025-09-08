@@ -1,0 +1,107 @@
+/* 图片增强和占位符样式 */
+.image-placeholder {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    min-height: 200px;
+}
+
+.car-image-placeholder {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    min-height: 250px;
+    position: relative;
+}
+
+.car-image-placeholder::before {
+    content: "🚗";
+    font-size: 48px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 图片加载优化 */
+img {
+    loading: lazy;
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 200px;
+}
+
+/* 汽车列表图片样式 */
+.car-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 轮播图片样式 */
+.swiper-slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* 团队成员图片 */
+.team-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 品牌logo图片 */
+.partner img {
+    max-width: 100px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.partner:hover img {
+    filter: grayscale(0%);
+}
+
+/* 背景图片增强 */
+.hero-section {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23667eea;stop-opacity:1" /><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23bg)"/><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+}
+
+/* 视频区域样式 */
+.video-placeholder {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    min-height: 400px;
+    position: relative;
+}
+
+.video-placeholder::before {
+    content: "▶️";
+    font-size: 64px;
+    display: block;
+    margin-bottom: 15px;
+}

@@ -3,7 +3,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export',
+  // Remove output: 'export' for Vercel deployment
+  // output: 'export',
   trailingSlash: true,
 }
 

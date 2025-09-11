@@ -2519,13 +2519,14 @@ ul.social-icon li a i:hover {
   border-radius: unset;
   border: unset;
   position: relative;
+  cursor: pointer;
 }
 .search-form-widget ul li .nav-link:hover {
-  background-color: #0A1C26;
+  background-color: #D01818;
   color: #ffffff;
 }
 .search-form-widget ul li .nav-link.active {
-  background-color: #0A1C26;
+  background-color: #D01818;
   color: #ffffff;
 }
 .search-form-widget ul li .nav-link.active::after {
@@ -2539,7 +2540,7 @@ ul.social-icon li a i:hover {
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 18px solid #0A1C26;
+  border-top: 18px solid #D01818;
 }
 .search-form-widget .tab-content {
   padding: 45px 32px 38px 37px;
@@ -2867,7 +2868,7 @@ ul.social-icon li a i:hover {
 .widget-tf-slider .slider-wrap .tf-slide-item .slide-item-content .slide-image .box-offer {
   width: 113px;
   height: 115px;
-  background-image: url(https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&h=400&fit=crop);
+  background-image: url(./../images/slide/offer.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 29px 26px 26px 23px;
@@ -3090,7 +3091,7 @@ ul.social-icon li a i:hover {
 /*------------ Slider form V3---------------- */
 .tf-slider-v3 {
   padding: 173px 0 297px 0;
-  background-image: url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&h=1080&fit=crop);
+  background-image: url(./../images/page/bg6.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -3249,7 +3250,7 @@ ul.social-icon li a i:hover {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  content: url(https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=200&h=200&fit=crop);
+  content: url(./../images/logo/logo.png);
   animation: preload 1.2s linear infinite alternate;
 }
 
@@ -3313,7 +3314,7 @@ ul.social-icon li a i:hover {
 /*------------ Page Title ---------------- */
 .tf-page-title .page-title {
   padding: 144px 0;
-  background-image: url(https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&h=1080&fit=crop);
+  background-image: url(./../images/page/page-title.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -3411,7 +3412,7 @@ ul.social-icon li a i:hover {
 
 .text-box-blog {
   padding: 38px 38px 33px 38px;
-  background-image: url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop);
+  background-image: url(./../images/blog/quote.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -3919,30 +3920,39 @@ ul.social-icon li a i:hover {
   align-items: stretch;
 }
 .box-car-wrap .box-car-item {
-  padding: 52px 20px 33px 20px;
+  padding: 0;
   border: solid 1px #F1F1F1;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  height: 300px;
 }
 .box-car-wrap .box-car-item:hover {
   background-color: #F4F5F9;
 }
 .box-car-wrap .box-car-item .image-car {
-  margin-bottom: 29px;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .box-car-wrap .box-car-item .image-car img {
   -webkit-transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
   transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
   transition: transform 500ms ease;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
 }
 .box-car-wrap .box-car-item > span {
   font-size: 22px;
@@ -3951,6 +3961,12 @@ ul.social-icon li a i:hover {
   color: #0D1637;
   display: block;
   text-transform: capitalize;
+  padding: 15px 10px;
+  text-align: center;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .box-car-wrap .box-car-item:hover img {
   -webkit-transform: scale3d(1.05, 1.05, 1.05);
@@ -4552,44 +4568,51 @@ ul.social-icon li a i:hover {
 .tf-car-service .content .description ul {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
   border-bottom: 1px solid #EFEFEF;
   padding: 20px 0px 30px 0px;
 }
 .tf-car-service .content .description ul li.listing-information {
   position: relative;
   display: flex;
+  align-items: center;
+  min-width: 0;
+  flex: 0 0 auto;
 }
 .tf-car-service .content .description ul li.listing-information:not(:last-child) {
-  margin-right: 23px;
+  margin-right: 0;
 }
 .tf-car-service .content .description ul li.listing-information:not(:last-child)::after {
-  width: 1px;
-  height: 26px;
-  background-color: #D9D9D9;
-  content: "";
-  position: absolute;
-  right: -15%;
-  top: 50%;
-  transform: translateY(-50%);
+  display: none;
 }
 .tf-car-service .content .description ul li.listing-information i {
   color: #000000;
-  margin-right: 16px;
-  margin-top: 10px;
-  font-size: 17px;
+  margin-right: 8px;
+  margin-top: 0;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.tf-car-service .content .description ul li.listing-information .inner {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 .tf-car-service .content .description ul li.listing-information .inner span {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 16px;
   color: #A2A4A8;
+  white-space: nowrap;
 }
 .tf-car-service .content .description ul li.listing-information .inner p {
   font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 18px;
   color: #000000;
+  margin: 0;
+  white-space: nowrap;
 }
 .tf-car-service .content .bottom-btn-wrap {
   margin-top: 21px;
@@ -4995,7 +5018,7 @@ ul.social-icon li a i:hover {
 }
 
 .car-bg-red {
-  background-image: url(../images/bg110.jpeg);
+  background-image: url(../images/banner/bg2.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 44px;
@@ -5003,7 +5026,7 @@ ul.social-icon li a i:hover {
 }
 
 .car-bg-black {
-  background-image: url(../images/bg110.jpeg);
+  background-image: url(../images/banner/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 60px 44px;
@@ -5011,7 +5034,7 @@ ul.social-icon li a i:hover {
 }
 
 .car-banner-style2 {
-  background-image: url(../images/bg110.jpeg);
+  background-image: url(../images/banner/bg4.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 40px 37px 75px 37px;
@@ -5358,7 +5381,7 @@ ul.social-icon li a i:hover {
 /*------------ Widget Counter car ---------------- */
 .widget-counter-car {
   padding-top: 116px;
-  background-image: url(https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&h=1080&fit=crop);
+  background-image: url(../images/page/bg2.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -5415,7 +5438,7 @@ ul.social-icon li a i:hover {
 .testimonial-car-v1 {
   padding: 0px 67px 0px 78px;
   padding-top: 100px;
-  background-image: url(https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=200&h=200&fit=crop);
+  background-image: url(../images/testimonial/shape.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5586,7 +5609,7 @@ ul.social-icon li a i:hover {
 /*------------ Widget Video ---------------- */
 /*------------ Widget browse-by-mode car ---------------- */
 .widget-browse-by-mode {
-  background-image: url(../images/page/bg5.jpeg);
+  background-image: url(../images/page/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 124px;
@@ -5828,7 +5851,7 @@ ul.social-icon li a i:hover {
 /*------------ Widget feature v2 ---------------- */
 /*------------ Widget take-appointement ---------------- */
 .take-appointement {
-  background-image: url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&h=1080&fit=crop);
+  background-image: url(../images/page/bg3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 55px 46px 55px 113px;
@@ -6002,7 +6025,7 @@ ul.social-icon li a i:hover {
 .widget-best-selling-car {
   padding-top: 135px;
   padding-bottom: 154px;
-  background-image: url(https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&h=1080&fit=crop);
+  background-image: url(../images/page/bg7.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -6085,7 +6108,7 @@ ul.social-icon li a i:hover {
 /*------------ Widget populer-makes ---------------- */
 /*------------ Widget mobie-app ---------------- */
 .mobie-app {
-  background-image: url(https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=1920&h=1080&fit=crop);
+  background-image: url(../images/banner/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 109px 39px 92px 93px;
@@ -6145,8 +6168,8 @@ ul.social-icon li a i:hover {
 /*------------ Widget search-car ---------------- */
 /*------------ widget explore car ---------------- */
 .widget-explore-car {
-  padding-top: 104px;
-  padding-bottom: 122px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header-section-main {
@@ -6169,8 +6192,8 @@ ul.social-icon li a i:hover {
 /*------------ widget explore car ---------------- */
 /*------------ widget best deals ---------------- */
 .widget-best-deals {
-  padding-top: 97px;
-  padding-bottom: 110px;
+  padding-top: 30px;
+  padding-bottom: 50px;
   background-color: #F2F5FB;
 }
 
@@ -6181,7 +6204,7 @@ ul.social-icon li a i:hover {
   padding-bottom: 103px;
 }
 .widget-tf-video .tf-video {
-  background-image: url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&h=1080&fit=crop);
+  background-image: url(../images/page/video2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 146px 0px 135px 0px;
@@ -6670,7 +6693,7 @@ a.mapboxgl-ctrl-logo {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&h=1080&fit=crop);
+  background-image: url(../images/banner/bg-video-car.jpg);
   padding: 166px 0px;
   text-align: center;
 }
@@ -6834,11 +6857,11 @@ a.mapboxgl-ctrl-logo {
 }
 
 .banner-car-listing-list {
-  background-image: url(https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1920&h=1080&fit=crop);
+  background-image: url(../images/banner/banner-list1.jpg);
 }
 
 .banner-car-listing-grid {
-  background-image: url(https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=1920&h=1080&fit=crop);
+  background-image: url(../images/banner/banner-list2.jpg);
 }
 
 .widget-car-listing-list {
@@ -8717,18 +8740,26 @@ a.mapboxgl-ctrl-logo {
   .tf-car-service .content {
     padding: 16px 25px 37px 25px;
   }
+  .tf-car-service .content .description ul {
+    gap: 15px;
+  }
   .tf-car-service .content .description ul li.listing-information .inner span {
-    display: none;
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .tf-car-service .content .description ul li.listing-information .inner p {
+    font-size: 13px;
+    line-height: 16px;
   }
   .tf-car-service .content .description ul li.listing-information i {
     margin-right: 6px;
-    margin-top: 0px;
+    font-size: 14px;
   }
   .tf-car-service .content .description ul li.listing-information:not(:last-child)::after {
     display: none;
   }
   .tf-car-service .content .description ul li.listing-information:not(:last-child) {
-    margin-right: 12px;
+    margin-right: 0;
   }
   .border-line {
     margin-bottom: 30px;
@@ -9846,6 +9877,54 @@ a.mapboxgl-ctrl-logo {
   font-weight: 800 !important;
   line-height: 32px !important;
   color: #1C2136 !important;
+}
+
+/* Add styles for .icons class to match .listing-information */
+.icon-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    flex: 0 0 auto;
+}
+
+.icons i {
+    color: #405FF2;
+    margin-right: 8px;
+    margin-top: 0;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.icons span {
+    font-size: 12px;
+    line-height: 16px;
+    color: #1C1C1E;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* Mobile responsive styles for .icon-box */
+@media (max-width: 767px) {
+    .icon-box {
+        gap: 15px;
+    }
+    
+    .icons span {
+        font-size: 11px;
+        line-height: 14px;
+    }
+    
+    .icons i {
+        margin-right: 8px;
+        font-size: 14px;
+    }
 }
 
 /*# sourceMappingURL=style.css.map */

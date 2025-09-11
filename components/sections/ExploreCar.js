@@ -1,7 +1,45 @@
+"use client";
 import Link from 'next/link'
+import { Card, Row, Col } from 'antd'
+import 'antd/dist/reset.css'
 import { carImages } from '../../util/carImages'
 
+const { Meta } = Card
+
 export default function ExploreCar() {
+    const carData = [
+        {
+            image: "/assets/images/unsplash/photo-1606220838315-056192d5e927.jpeg",
+            title: "Sedan",
+            alt: "Sedan"
+        },
+        {
+            image: "/assets/images/unsplash/photo-1580273916550-e323be2ae537.jpeg",
+            title: "SUV",
+            alt: "SUV"
+        },
+        {
+            image: "/assets/images/unsplash/photo-1544636331-e26879cd4d9b.jpeg",
+            title: "Cabriolet",
+            alt: "Cabriolet"
+        },
+        {
+            image: "/assets/images/unsplash/photo-1519641471654-76ce0107ad1b.jpeg",
+            title: "Pickup",
+            alt: "Pickup"
+        },
+        {
+            image: "/assets/images/unsplash/photo-1550355291-bbee04a92027.jpeg",
+            title: "Supercar",
+            alt: "Supercar"
+        },
+        {
+            image: "/assets/images/unsplash/photo-1565043666747-69f6646db940.jpeg",
+            title: "Minivans",
+            alt: "Minivans"
+        }
+    ]
+
     return (
         <>
             <div className="widget-explore-car">
@@ -16,44 +54,21 @@ export default function ExploreCar() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="box-car-wrap">
-                            <Link href="/#" className="box-car-item">
-                                <div className="image-car">
-                                    <img src="https://images.unsplash.com/photo-1606220838315-056192d5e927?w=200&h=150&fit=crop" alt="Sedan" />
-                                </div>
-                                <span>Sedan</span>
-                            </Link>
-                            <Link href="/#" className="box-car-item">
-                                <div className="image-car">
-                                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=200&h=150&fit=crop" alt="SUV" />
-                                </div>
-                                <span>SUV</span>
-                            </Link>
-                            <Link href="/#" className="box-car-item">
-                                <div className="image-car">
-                                    <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=200&h=150&fit=crop" alt="Cabriolet" />
-                                </div>
-                                <span>Cabriolet</span>
-                            </Link>
-                            <Link href="/#" className="box-car-item">
-                                <div className="image-car">
-                                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=200&h=150&fit=crop" alt="Pickup" />
-                                </div>
-                                <span>Pickup</span>
-                            </Link>
-                            <Link href="/#" className="box-car-item">
-                                <div className="image-car">
-                                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=200&h=150&fit=crop" alt="Supercar" />
-                                </div>
-                                <span>Supercar</span>
-                            </Link>
-                            <Link href="/#" className="box-car-item">
-                                <div className="image-car">
-                                    <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=200&h=150&fit=crop" alt="Minivans" />
-                                </div>
-                                <span>Minivans</span>
-                            </Link>
-                        </div>
+                        <Row gutter={[24, 24]}>
+                            {carData.map((car, index) => (
+                                <Col key={index} xs={24} sm={12} md={8} lg={4}>
+                                    <Link href="/#">
+                                        <Card
+                                            hoverable
+                                            cover={<img alt={car.alt} src={car.image} />}
+                                            style={{ height: '100%' }}
+                                        >
+                                            <Meta title={car.title} />
+                                        </Card>
+                                    </Link>
+                                </Col>
+                            ))}
+                        </Row>
                     </div>
                 </div>
             </div>

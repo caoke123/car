@@ -2,7 +2,7 @@ import Link from "next/link"
 export default function Footer1() {
     return (
         <>
-            <footer id="footer" className="clearfix bg-footer2 pd-t81 re-hi">
+            <footer id="footer" className="clearfix bg-footer2 pd-t81 re-hi footer-full-width">
                 <div className="themesflat-container">
                     <div className="row footer-top">
                         <div className="col-lg-6 col-md-12 col-12 pd-r80 ">
@@ -80,37 +80,9 @@ export default function Footer1() {
                             </div>
                         </div>
                     </div>
-                    <div className="row footer-bottom">
-                        <div className="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
-                            <p className="coppy-right">Made with ❤️ by <Link href="/#">Themesflat</Link></p>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
-                            <ul className="social-icon">
-                                <li>
-                                    <Link href="/#"><i className="icon-6" /></Link>
-                                </li>
-                                <li>
-                                    <Link href="/#"><i className="icon-4" /></Link>
-                                </li>
-                                <li>
-                                    <Link href="/#"><i className="icon-5" /></Link>
-                                </li>
-                                <li>
-                                    <Link href="/#"><i className="icon-7" /></Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="col-md-12 col-lg-12 col-xl-4 col-xxl-4">
-                            <ul className="bottom-bar-menu">
-                                <li><Link href="/#">Privacy &amp; Policy</Link></li>
-                                <li><Link href="/#">Licensing</Link></li>
-                                <li><Link href="/#">Instruction</Link></li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
-                <img src="/assets/images/page/ft-left.png" alt="left" className="shape-left" />
-                <img src="/assets/images/page/ft-right.png" alt="right" className="shape-right" />
+
             </footer>
 
         </>

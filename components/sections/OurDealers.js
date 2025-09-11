@@ -20,7 +20,7 @@ export default function OurDealers() {
                             <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xxl-3">
                                 <div className="tf-widget-team t-al-center">
                                     <div className="team-image">
-                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Cameron Williamson" />
+                                        <img src="/assets/images/unsplash/sales manager(3).jpg" alt="Cameron Williamson" />
                                         <Link href="/#" className="btn-team">
                                             <svg width={29} height={28} viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 25.48L25.0125 3.4675M3 2H26.48V25.48" stroke="#DF2818" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="round">
@@ -41,7 +41,7 @@ export default function OurDealers() {
                             <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xxl-3">
                                 <div className="tf-widget-team t-al-center">
                                     <div className="team-image">
-                                        <img src="https://images.unsplash.com/photo-1494790108755-2616c4e73dfe?w=300&h=300&fit=crop&crop=face" alt="Sarah Johnson" />
+                                        <img src="/assets/images/unsplash/sales manager.jpg" alt="Sarah Johnson" />
                                         <Link href="/#" className="btn-team">
                                             <svg width={29} height={28} viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 25.48L25.0125 3.4675M3 2H26.48V25.48" stroke="#DF2818" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="round">
@@ -62,7 +62,7 @@ export default function OurDealers() {
                             <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xxl-3">
                                 <div className="tf-widget-team t-al-center">
                                     <div className="team-image">
-                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Michael Chen" />
+                                        <img src="/assets/images/unsplash/sales manager (2).jpg" alt="Michael Chen" />
                                         <Link href="/#" className="btn-team">
                                             <svg width={29} height={28} viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 25.48L25.0125 3.4675M3 2H26.48V25.48" stroke="#DF2818" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="round">
@@ -83,7 +83,7 @@ export default function OurDealers() {
                             <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xxl-3">
                                 <div className="tf-widget-team t-al-center">
                                     <div className="team-image">
-                                        <img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=300&h=300&fit=crop&crop=face" alt="Emma Davis" />
+                                        <img src="/assets/images/unsplash/sales manager(1).jpg" alt="Emma Davis" />
                                         <Link href="/#" className="btn-team">
                                             <svg width={29} height={28} viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 25.48L25.0125 3.4675M3 2H26.48V25.48" stroke="#DF2818" strokeWidth="3.5" strokeLinecap="square" strokeLinejoin="round">

@@ -1,7 +1,64 @@
 
+'use client'
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
+import { useState } from "react"
+
 export default function AddCart() {
+    const [uploadedImages, setUploadedImages] = useState({})
+    const [formData, setFormData] = useState({
+        title: '',
+        brand: '',
+        model: '',
+        year: '',
+        price: '',
+        mileage: '',
+        transmission: '',
+        fuelType: '',
+        condition: '',
+        description: '',
+        videoUrl: ''
+    })
+
+    const handleImageUpload = (event, imageId) => {
+        const file = event.target.files[0]
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = (e) => {
+                setUploadedImages(prev => ({
+                    ...prev,
+                    [imageId]: {
+                        file: file,
+                        preview: e.target.result
+                    }
+                }))
+            }
+            reader.readAsDataURL(file)
+        }
+    }
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        
+        // 检查是否至少上传了一张图片
+        if (Object.keys(uploadedImages).length === 0) {
+            alert('请至少上传一张图片')
+            return
+        }
+        
+        // 这里可以添加提交到后端的逻辑
+        console.log('表单数据:', formData)
+        console.log('上传的图片:', uploadedImages)
+        alert('车辆信息提交成功！')
+    }
 
     return (
         <>
@@ -21,7 +78,7 @@ export default function AddCart() {
                     <div className="tf-widget-add-cart">
                         <div className="themesflat-container">
                             <div className="tf-add-cart">
-                                <form action="/" id="submit-add-cart" className="form-add-cart needs-validation" noValidate>
+                                <form onSubmit={handleSubmit} id="submit-add-cart" className="form-add-cart needs-validation" noValidate>
                                     <fieldset id="information" className="mb-60">
                                         <div className="inner-title mb-30">
                                             <span className="sub-title">Add Your Car Today</span>
@@ -30,7 +87,7 @@ export default function AddCart() {
                                         <div className="tfad-listing-title mb-30">
                                             <div className="form-group">
                                                 <label>Listing Title (*)</label>
-                                                <input type="text" id="listing-title" className="form-control" name="listing-title" placeholder="Enter title here" />
+                                                <input type="text" id="listing-title" className="form-control" name="title" placeholder="Enter title here" value={formData.title} onChange={handleInputChange} />
                                             </div>
                                         </div>
                                         <div className="listing-fields-grid mb-30">
@@ -467,37 +524,67 @@ export default function AddCart() {
                                         <div className="upload-image-add-car">
                                             <div className="upload-image">
                                                 <label htmlFor="photoLoad" className="uploadLabel">
-                                                    <i className="icon-Group4" />
-                                                    <span>Add a Photo</span>
-                                                    <input type="file" id="photoLoad" className="photoLoad" accept="image/*" />
+                                                    {uploadedImages.photo1 ? (
+                                                        <img src={uploadedImages.photo1.preview} alt="Preview" style={{width: '100%', height: '100px', objectFit: 'cover'}} />
+                                                    ) : (
+                                                        <>
+                                                            <i className="icon-Group4" />
+                                                            <span>Add a Photo</span>
+                                                        </>
+                                                    )}
+                                                    <input type="file" id="photoLoad" className="photoLoad" accept="image/*" onChange={(e) => handleImageUpload(e, 'photo1')} />
                                                 </label>
                                             </div>
                                             <div className="upload-image">
                                                 <label htmlFor="photoLoad1" className="uploadLabel">
-                                                    <i className="icon-Group4" />
-                                                    <span>Add a Photo</span>
-                                                    <input type="file" id="photoLoad1" className="photoLoad" accept="image/*" />
+                                                    {uploadedImages.photo2 ? (
+                                                        <img src={uploadedImages.photo2.preview} alt="Preview" style={{width: '100%', height: '100px', objectFit: 'cover'}} />
+                                                    ) : (
+                                                        <>
+                                                            <i className="icon-Group4" />
+                                                            <span>Add a Photo</span>
+                                                        </>
+                                                    )}
+                                                    <input type="file" id="photoLoad1" className="photoLoad" accept="image/*" onChange={(e) => handleImageUpload(e, 'photo2')} />
                                                 </label>
                                             </div>
                                             <div className="upload-image">
                                                 <label htmlFor="photoLoad2" className="uploadLabel">
-                                                    <i className="icon-Group4" />
-                                                    <span>Add a Photo</span>
-                                                    <input type="file" id="photoLoad2" className="photoLoad" accept="image/*" />
+                                                    {uploadedImages.photo3 ? (
+                                                        <img src={uploadedImages.photo3.preview} alt="Preview" style={{width: '100%', height: '100px', objectFit: 'cover'}} />
+                                                    ) : (
+                                                        <>
+                                                            <i className="icon-Group4" />
+                                                            <span>Add a Photo</span>
+                                                        </>
+                                                    )}
+                                                    <input type="file" id="photoLoad2" className="photoLoad" accept="image/*" onChange={(e) => handleImageUpload(e, 'photo3')} />
                                                 </label>
                                             </div>
                                             <div className="upload-image">
                                                 <label htmlFor="photoLoad3" className="uploadLabel">
-                                                    <i className="icon-Group4" />
-                                                    <span>Add a Photo</span>
-                                                    <input type="file" id="photoLoad3" className="photoLoad" accept="image/*" />
+                                                    {uploadedImages.photo4 ? (
+                                                        <img src={uploadedImages.photo4.preview} alt="Preview" style={{width: '100%', height: '100px', objectFit: 'cover'}} />
+                                                    ) : (
+                                                        <>
+                                                            <i className="icon-Group4" />
+                                                            <span>Add a Photo</span>
+                                                        </>
+                                                    )}
+                                                    <input type="file" id="photoLoad3" className="photoLoad" accept="image/*" onChange={(e) => handleImageUpload(e, 'photo4')} />
                                                 </label>
                                             </div>
                                             <div className="upload-image">
                                                 <label htmlFor="photoLoad4" className="uploadLabel">
-                                                    <i className="icon-Group4" />
-                                                    <span>Add a Photo</span>
-                                                    <input type="file" id="photoLoad4" className="photoLoad" accept="image/*" />
+                                                    {uploadedImages.photo5 ? (
+                                                        <img src={uploadedImages.photo5.preview} alt="Preview" style={{width: '100%', height: '100px', objectFit: 'cover'}} />
+                                                    ) : (
+                                                        <>
+                                                            <i className="icon-Group4" />
+                                                            <span>Add a Photo</span>
+                                                        </>
+                                                    )}
+                                                    <input type="file" id="photoLoad4" className="photoLoad" accept="image/*" onChange={(e) => handleImageUpload(e, 'photo5')} />
                                                 </label>
                                             </div>
                                         </div>
@@ -519,15 +606,20 @@ export default function AddCart() {
                                         </div>
                                         <div className="upload-image">
                                             <label htmlFor="photoLoad-vin" className="uploadLabel">
-                                                <i className="icon-Group4" />
-                                                <span>Add a Photo</span>
-                                                <input type="file" id="photoLoad-vin" className="photoLoad" accept="image/*" />
+                                                {uploadedImages.vinReport ? (
+                                                    <img src={uploadedImages.vinReport.preview} alt="VIN Report Preview" style={{width: '100%', height: '100px', objectFit: 'cover'}} />
+                                                ) : (
+                                                    <>
+                                                        <i className="icon-Group4" />
+                                                        <span>Add a Photo</span>
+                                                    </>
+                                                )}
+                                                <input type="file" id="photoLoad-vin" className="photoLoad" accept="image/*" onChange={(e) => handleImageUpload(e, 'vinReport')} />
                                             </label>
                                         </div>
                                     </fieldset>
                                     <fieldset>
-                                        <button type="submit" className="button-save-listing">Add
-                                            Car</button>
+                                        <button type="submit" className="button-save-listing">Add Car</button>
                                     </fieldset>
                                 </form>
                             </div>

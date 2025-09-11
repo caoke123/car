@@ -4,9 +4,12 @@ import ReactSlider from "react-slider";
 function RangeSlider({ title }) {
     const [value, setValue] = useState([17000, 24000]);
 
-    const renderThumb = (props, state) => (
-        <div {...props}>{state.valueNow}</div>
-    );
+    const renderThumb = (props, state) => {
+        const { key, ...otherProps } = props;
+        return (
+            <div key={key} {...otherProps}>{state.valueNow}</div>
+        );
+    };
 
     const handleChange = (newValue) => {
         setValue(newValue);
@@ -24,6 +27,8 @@ function RangeSlider({ title }) {
                 trackClassName="example-track"
                 renderThumb={renderThumb}
                 onChange={handleChange}
+                pearling
+                minDistance={1000}
             />
 
             <div className="group-range-title mt-2">

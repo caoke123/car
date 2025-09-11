@@ -1,29 +1,24 @@
-import VideoPopup from '../elements/VideoPopup'
+import YouTubePlayer from '../elements/YouTubePlayer'
 
 export default function Video() {
     return (
         <>
-            <div className="widget-tf-video" style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1559526324-593bc054d377?w=1920&h=1080&fit=crop)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                position: 'relative'
+            <section className="video-section" style={{
+                padding: '80px 0',
+                backgroundColor: '#f8f9fa'
             }}>
-                <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)'
-                }}></div>
-                <div className="themesflat-container" style={{ position: 'relative', zIndex: 2 }}>
-                    <div className="tf-video video-wrap">
-                        <VideoPopup style={1}/>
-                        <div className="title-video" style={{ color: 'white', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Watch <span className="text-red">Video</span></div>
+                <div className="container">
+                    <div className="text-center mb-3">
+                        <h2 className="section-title">Watch <span style={{ color: '#ff4444' }}>Video</span></h2>
+                        <p className="section-subtitle">Discover our amazing automotive experience</p>
                     </div>
+                    <YouTubePlayer 
+                        videoId="JyGROfuXggk" 
+                        thumbnailUrl="/assets/images/unsplash/video-bg.jpg"
+                        title="MotorX Car Experience"
+                    />
                 </div>
-            </div>
+            </section>
         </>
     )
 }

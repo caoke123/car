@@ -7,6 +7,7 @@ import ModalToggle from "../elements/ModalToggle"
 import ModalToggle2 from "../elements/ModalToggle2"
 import ModalToggle3 from "../elements/ModalToggle3"
 import TabList from "../elements/TabList"
+import "../../public/assets/css/footer.css"
 import Breadcrumb from './Breadcrumb'
 import Footer1 from './footer/Footer1'
 import Footer2 from './footer/Footer2'

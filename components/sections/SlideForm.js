@@ -4,15 +4,19 @@ import RangeSlider from "../elements/RangeSlider"
 
 export default function SlideForm() {
     const [activeIndex, setActiveIndex] = useState(1)
-    const handleOnClick = (index) => {
+    const handleOnClick = (index, e) => {
+        e.preventDefault()
+        e.stopPropagation()
         setActiveIndex(index)
     }
     return (
         <>
+            {/* 背景视频区域 */}
             <div className="tf-slide-form" style={{
                 position: 'relative',
                 overflow: 'hidden',
-                backgroundImage: 'none'  // 移除默认背景图片
+                backgroundImage: 'none',  // 移除默认背景图片
+                minHeight: '80vh'  // 增加英雄区域高度
             }}>
                 <video
                     autoPlay
@@ -46,28 +50,51 @@ export default function SlideForm() {
                         <p className="wow fadeInUp" data-wow-delay="600ms" data-wow-duration="2000ms" style={{color: 'white'}}>Unlimited mileage · No
                             hidden fees · Free cancellation</p>
                     </div>
-                    {/* Tab */}
+                </div>
+            </div>
+            
+            {/* 搜索表单区域 - 移到背景视频外 */}
+            <div style={{
+                backgroundColor: '#f8f9fa',
+                padding: '80px 0',
+                marginTop: '-50px',
+                position: 'relative',
+                zIndex: 10
+            }}>
+                <div className="themesflat-container">
                     <div className="search-form-widget">
-                        <ul className="nav nav-tabs" id="myTab" role="tablist">
-                            <li className="nav-item" onClick={() => handleOnClick(1)}>
-                                <button className={activeIndex == 1 ? "nav-link active" : "nav-link"}>All Cars</button>
+                        <ul className="nav nav-tabs" id="myTab" role="tablist" style={{marginBottom: '20px'}}>
+                            <li className="nav-item">
+                                <button 
+                                    className={activeIndex == 1 ? "nav-link active" : "nav-link"} 
+                                    onClick={(e) => handleOnClick(1, e)}
+                                >
+                                    All Cars
+                                </button>
                             </li>
-                            <li className="nav-item" onClick={() => handleOnClick(2)}>
-                                <button className={activeIndex == 2 ? "nav-link active" : "nav-link"}>Used
-                                    car</button>
+                            <li className="nav-item">
+                                <button 
+                                    className={activeIndex == 2 ? "nav-link active" : "nav-link"} 
+                                    onClick={(e) => handleOnClick(2, e)}
+                                >
+                                    Used car
+                                </button>
                             </li>
-                            <li className="nav-item" onClick={() => handleOnClick(3)}>
-                                <button className={activeIndex == 3 ? "nav-link active" : "nav-link"}>New
-                                    Cars</button>
+                            <li className="nav-item">
+                                <button 
+                                    className={activeIndex == 3 ? "nav-link active" : "nav-link"} 
+                                    onClick={(e) => handleOnClick(3, e)}
+                                >
+                                    New Cars
+                                </button>
                             </li>
                         </ul>
-                        <div className="tab-content" id="myTabContent">
+                        <div className="tab-content" id="myTabContent" style={{marginTop: '10px'}}>
                             <div className={activeIndex == 1 ? "tab-pane fade show active" : "tab-pane fade"}>
                                 <form method="post" id="search-forms">
                                     <div className="inner-group grid">
                                         <div className="form-group">
                                             <div className="group-select">
-
                                                 <select className="nice-select">
                                                     <option data-value className="option selected">Make</option>
                                                     <option data-value="Acura" className="option">Acura</option>
@@ -84,7 +111,6 @@ export default function SlideForm() {
                                         </div>
                                         <div className="form-group">
                                             <div className="group-select">
-
                                                 <select className="nice-select">
                                                     <option data-value className="option selected">Models</option>
                                                     <option data-value="3 Series" className="option">3 Series</option>
@@ -123,7 +149,6 @@ export default function SlideForm() {
                                     <div className="inner-group grid">
                                         <div className="form-group">
                                             <div className="group-select">
-
                                                 <select className="nice-select">
                                                     <option data-value className="option selected">Make</option>
                                                     <option data-value="Acura" className="option">Acura</option>
@@ -140,7 +165,6 @@ export default function SlideForm() {
                                         </div>
                                         <div className="form-group">
                                             <div className="group-select">
-
                                                 <select className="nice-select">
                                                     <option data-value className="option selected">Models</option>
                                                     <option data-value="3 Series" className="option">3 Series</option>
@@ -179,7 +203,6 @@ export default function SlideForm() {
                                     <div className="inner-group grid">
                                         <div className="form-group">
                                             <div className="group-select">
-
                                                 <select className="nice-select">
                                                     <option data-value className="option selected">Make</option>
                                                     <option data-value="Acura" className="option">Acura</option>
@@ -196,7 +219,6 @@ export default function SlideForm() {
                                         </div>
                                         <div className="form-group">
                                             <div className="group-select">
-
                                                 <select className="nice-select">
                                                     <option data-value className="option selected">Models</option>
                                                     <option data-value="3 Series" className="option">3 Series</option>
@@ -231,10 +253,9 @@ export default function SlideForm() {
                                 </form >
                             </div >
                         </div >
-                    </div >
-                    {/* Tab */}
-                </div >
-            </div >
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
